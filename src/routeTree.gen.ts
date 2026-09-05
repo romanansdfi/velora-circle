@@ -10,11 +10,14 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AdminRouteImport } from './routes/admin'
 import { Route as FilesRouteImport } from './routes/files'
+import { Route as HelpRouteImport } from './routes/help'
 import { Route as HomeRouteImport } from './routes/home'
 import { Route as MeetingsRouteImport } from './routes/meetings'
 import { Route as MessagesRouteImport } from './routes/messages'
 import { Route as SavedRouteImport } from './routes/saved'
+import { Route as SettingsRouteImport } from './routes/settings'
 import { Route as CirclesIndexRouteImport } from './routes/circles.index'
 import { Route as CirclesCircleIdRouteImport } from './routes/circles.$circleId'
 import { Route as MeetingMeetingIdRouteImport } from './routes/meeting.$meetingId'
@@ -24,9 +27,19 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AdminRoute = AdminRouteImport.update({
+  id: '/admin',
+  path: '/admin',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const FilesRoute = FilesRouteImport.update({
   id: '/files',
   path: '/files',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HelpRoute = HelpRouteImport.update({
+  id: '/help',
+  path: '/help',
   getParentRoute: () => rootRouteImport,
 } as any)
 const HomeRoute = HomeRouteImport.update({
@@ -49,6 +62,11 @@ const SavedRoute = SavedRouteImport.update({
   path: '/saved',
   getParentRoute: () => rootRouteImport,
 } as any)
+const SettingsRoute = SettingsRouteImport.update({
+  id: '/settings',
+  path: '/settings',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const CirclesIndexRoute = CirclesIndexRouteImport.update({
   id: '/circles/',
   path: '/circles/',
@@ -67,22 +85,28 @@ const MeetingMeetingIdRoute = MeetingMeetingIdRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/admin': typeof AdminRoute
   '/files': typeof FilesRoute
+  '/help': typeof HelpRoute
   '/home': typeof HomeRoute
   '/meetings': typeof MeetingsRoute
   '/messages': typeof MessagesRoute
   '/saved': typeof SavedRoute
+  '/settings': typeof SettingsRoute
   '/circles/$circleId': typeof CirclesCircleIdRoute
   '/meeting/$meetingId': typeof MeetingMeetingIdRoute
   '/circles/': typeof CirclesIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/admin': typeof AdminRoute
   '/files': typeof FilesRoute
+  '/help': typeof HelpRoute
   '/home': typeof HomeRoute
   '/meetings': typeof MeetingsRoute
   '/messages': typeof MessagesRoute
   '/saved': typeof SavedRoute
+  '/settings': typeof SettingsRoute
   '/circles/$circleId': typeof CirclesCircleIdRoute
   '/meeting/$meetingId': typeof MeetingMeetingIdRoute
   '/circles': typeof CirclesIndexRoute
@@ -90,11 +114,14 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/admin': typeof AdminRoute
   '/files': typeof FilesRoute
+  '/help': typeof HelpRoute
   '/home': typeof HomeRoute
   '/meetings': typeof MeetingsRoute
   '/messages': typeof MessagesRoute
   '/saved': typeof SavedRoute
+  '/settings': typeof SettingsRoute
   '/circles/$circleId': typeof CirclesCircleIdRoute
   '/meeting/$meetingId': typeof MeetingMeetingIdRoute
   '/circles/': typeof CirclesIndexRoute
@@ -103,33 +130,42 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/admin'
     | '/files'
+    | '/help'
     | '/home'
     | '/meetings'
     | '/messages'
     | '/saved'
+    | '/settings'
     | '/circles/$circleId'
     | '/meeting/$meetingId'
     | '/circles/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/admin'
     | '/files'
+    | '/help'
     | '/home'
     | '/meetings'
     | '/messages'
     | '/saved'
+    | '/settings'
     | '/circles/$circleId'
     | '/meeting/$meetingId'
     | '/circles'
   id:
     | '__root__'
     | '/'
+    | '/admin'
     | '/files'
+    | '/help'
     | '/home'
     | '/meetings'
     | '/messages'
     | '/saved'
+    | '/settings'
     | '/circles/$circleId'
     | '/meeting/$meetingId'
     | '/circles/'
@@ -137,11 +173,14 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AdminRoute: typeof AdminRoute
   FilesRoute: typeof FilesRoute
+  HelpRoute: typeof HelpRoute
   HomeRoute: typeof HomeRoute
   MeetingsRoute: typeof MeetingsRoute
   MessagesRoute: typeof MessagesRoute
   SavedRoute: typeof SavedRoute
+  SettingsRoute: typeof SettingsRoute
   CirclesCircleIdRoute: typeof CirclesCircleIdRoute
   MeetingMeetingIdRoute: typeof MeetingMeetingIdRoute
   CirclesIndexRoute: typeof CirclesIndexRoute
@@ -156,11 +195,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/admin': {
+      id: '/admin'
+      path: '/admin'
+      fullPath: '/admin'
+      preLoaderRoute: typeof AdminRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/files': {
       id: '/files'
       path: '/files'
       fullPath: '/files'
       preLoaderRoute: typeof FilesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/help': {
+      id: '/help'
+      path: '/help'
+      fullPath: '/help'
+      preLoaderRoute: typeof HelpRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/home': {
@@ -191,6 +244,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SavedRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/settings': {
+      id: '/settings'
+      path: '/settings'
+      fullPath: '/settings'
+      preLoaderRoute: typeof SettingsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/circles/': {
       id: '/circles/'
       path: '/circles'
@@ -217,11 +277,14 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AdminRoute: AdminRoute,
   FilesRoute: FilesRoute,
+  HelpRoute: HelpRoute,
   HomeRoute: HomeRoute,
   MeetingsRoute: MeetingsRoute,
   MessagesRoute: MessagesRoute,
   SavedRoute: SavedRoute,
+  SettingsRoute: SettingsRoute,
   CirclesCircleIdRoute: CirclesCircleIdRoute,
   MeetingMeetingIdRoute: MeetingMeetingIdRoute,
   CirclesIndexRoute: CirclesIndexRoute,
