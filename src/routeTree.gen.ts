@@ -10,15 +10,23 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as FilesRouteImport } from './routes/files'
 import { Route as HomeRouteImport } from './routes/home'
 import { Route as MeetingsRouteImport } from './routes/meetings'
 import { Route as MessagesRouteImport } from './routes/messages'
+import { Route as SavedRouteImport } from './routes/saved'
 import { Route as CirclesIndexRouteImport } from './routes/circles.index'
 import { Route as CirclesCircleIdRouteImport } from './routes/circles.$circleId'
+import { Route as MeetingMeetingIdRouteImport } from './routes/meeting.$meetingId'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FilesRoute = FilesRouteImport.update({
+  id: '/files',
+  path: '/files',
   getParentRoute: () => rootRouteImport,
 } as any)
 const HomeRoute = HomeRouteImport.update({
@@ -36,6 +44,11 @@ const MessagesRoute = MessagesRouteImport.update({
   path: '/messages',
   getParentRoute: () => rootRouteImport,
 } as any)
+const SavedRoute = SavedRouteImport.update({
+  id: '/saved',
+  path: '/saved',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const CirclesIndexRoute = CirclesIndexRouteImport.update({
   id: '/circles/',
   path: '/circles/',
@@ -46,65 +59,91 @@ const CirclesCircleIdRoute = CirclesCircleIdRouteImport.update({
   path: '/circles/$circleId',
   getParentRoute: () => rootRouteImport,
 } as any)
+const MeetingMeetingIdRoute = MeetingMeetingIdRouteImport.update({
+  id: '/meeting/$meetingId',
+  path: '/meeting/$meetingId',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/files': typeof FilesRoute
   '/home': typeof HomeRoute
   '/meetings': typeof MeetingsRoute
   '/messages': typeof MessagesRoute
+  '/saved': typeof SavedRoute
   '/circles/$circleId': typeof CirclesCircleIdRoute
+  '/meeting/$meetingId': typeof MeetingMeetingIdRoute
   '/circles/': typeof CirclesIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/files': typeof FilesRoute
   '/home': typeof HomeRoute
   '/meetings': typeof MeetingsRoute
   '/messages': typeof MessagesRoute
+  '/saved': typeof SavedRoute
   '/circles/$circleId': typeof CirclesCircleIdRoute
+  '/meeting/$meetingId': typeof MeetingMeetingIdRoute
   '/circles': typeof CirclesIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/files': typeof FilesRoute
   '/home': typeof HomeRoute
   '/meetings': typeof MeetingsRoute
   '/messages': typeof MessagesRoute
+  '/saved': typeof SavedRoute
   '/circles/$circleId': typeof CirclesCircleIdRoute
+  '/meeting/$meetingId': typeof MeetingMeetingIdRoute
   '/circles/': typeof CirclesIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/files'
     | '/home'
     | '/meetings'
     | '/messages'
+    | '/saved'
     | '/circles/$circleId'
+    | '/meeting/$meetingId'
     | '/circles/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/files'
     | '/home'
     | '/meetings'
     | '/messages'
+    | '/saved'
     | '/circles/$circleId'
+    | '/meeting/$meetingId'
     | '/circles'
   id:
     | '__root__'
     | '/'
+    | '/files'
     | '/home'
     | '/meetings'
     | '/messages'
+    | '/saved'
     | '/circles/$circleId'
+    | '/meeting/$meetingId'
     | '/circles/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  FilesRoute: typeof FilesRoute
   HomeRoute: typeof HomeRoute
   MeetingsRoute: typeof MeetingsRoute
   MessagesRoute: typeof MessagesRoute
+  SavedRoute: typeof SavedRoute
   CirclesCircleIdRoute: typeof CirclesCircleIdRoute
+  MeetingMeetingIdRoute: typeof MeetingMeetingIdRoute
   CirclesIndexRoute: typeof CirclesIndexRoute
 }
 
@@ -115,6 +154,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/files': {
+      id: '/files'
+      path: '/files'
+      fullPath: '/files'
+      preLoaderRoute: typeof FilesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/home': {
@@ -138,6 +184,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof MessagesRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/saved': {
+      id: '/saved'
+      path: '/saved'
+      fullPath: '/saved'
+      preLoaderRoute: typeof SavedRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/circles/': {
       id: '/circles/'
       path: '/circles'
@@ -152,15 +205,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CirclesCircleIdRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/meeting/$meetingId': {
+      id: '/meeting/$meetingId'
+      path: '/meeting/$meetingId'
+      fullPath: '/meeting/$meetingId'
+      preLoaderRoute: typeof MeetingMeetingIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  FilesRoute: FilesRoute,
   HomeRoute: HomeRoute,
   MeetingsRoute: MeetingsRoute,
   MessagesRoute: MessagesRoute,
+  SavedRoute: SavedRoute,
   CirclesCircleIdRoute: CirclesCircleIdRoute,
+  MeetingMeetingIdRoute: MeetingMeetingIdRoute,
   CirclesIndexRoute: CirclesIndexRoute,
 }
 export const routeTree = rootRouteImport
