@@ -68,7 +68,7 @@ function NavLink({
 
   return (
     <Link
-      to={to}
+      to={to as "/home"}
       onClick={onNavigate}
       aria-label={label}
       aria-current={active ? "page" : undefined}
@@ -303,7 +303,7 @@ function MobileNavItem({
   const active = pathname === to || (to !== "/home" && pathname.startsWith(to));
   return (
     <Link
-      to={to}
+      to={to as "/home"}
       aria-label={label}
       aria-current={active ? "page" : undefined}
       className={cn(
