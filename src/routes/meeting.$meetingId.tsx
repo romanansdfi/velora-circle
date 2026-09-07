@@ -88,7 +88,7 @@ function VideoTile({
 
 function MeetingRoom() {
   const { meetingId } = useParams({ from: "/meeting/$meetingId" });
-  const meeting = meetings.find((m) => m.id === meetingId) ?? meetings[0];
+  const meeting = meetings.find((m) => m.id === meetingId) ?? meetings[0]!;
   const navigate = useNavigate();
   const isHost = currentUser.role === "admin" || currentUser.role === "owner";
 
