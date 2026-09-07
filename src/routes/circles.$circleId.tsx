@@ -29,7 +29,7 @@ export const Route = createFileRoute("/circles/$circleId")({
 
 function CirclePage() {
   const { circleId } = useParams({ from: "/circles/$circleId" });
-  const circle = circles.find((c) => c.id === circleId) ?? circles[0];
+  const circle = circles.find((c) => c.id === circleId) ?? circles[0]!;
   const isAdmin = currentUser.role === "admin" || currentUser.role === "owner";
 
   return (

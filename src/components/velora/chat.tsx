@@ -91,7 +91,7 @@ function MessageActions() {
         <DropdownMenuItem onSelect={() => act("Forwarded")}>
           <Forward className="h-4 w-4" /> Forward
         </DropdownMenuItem>
-        <DropdownMenuItem variant="destructive" onSelect={() => act("Deleted")}>
+        <DropdownMenuItem className="text-destructive focus:text-destructive" onSelect={() => act("Deleted")}>
           <Trash2 className="h-4 w-4" /> Delete
         </DropdownMenuItem>
       </DropdownMenuContent>

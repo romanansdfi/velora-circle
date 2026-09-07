@@ -31,8 +31,8 @@ export function VeloraLogo({
   compact = false,
   className,
 }: {
-  compact?: boolean;
-  className?: string;
+  compact?: boolean | undefined;
+  className?: string | undefined;
 }) {
   return (
     <div className={cn("flex min-w-0 items-center gap-2.5", className)}>

@@ -116,7 +116,7 @@ export function FileRow({ file }: { file: FileItem }) {
           <DropdownMenuItem onSelect={() => toast("Download started")}>Download</DropdownMenuItem>
           <DropdownMenuItem onSelect={() => toast("Saved to your library")}>Save</DropdownMenuItem>
           <DropdownMenuItem onSelect={() => toast("Share link copied")}>Share</DropdownMenuItem>
-          <DropdownMenuItem variant="destructive" onSelect={() => toast("Removed")}>
+          <DropdownMenuItem className="text-destructive focus:text-destructive" onSelect={() => toast("Removed")}>
             Remove
           </DropdownMenuItem>
         </DropdownMenuContent>

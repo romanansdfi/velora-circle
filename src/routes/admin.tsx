@@ -87,7 +87,7 @@ function AdminPage() {
                 className="pl-9"
               />
             </div>
-            <Select defaultValue={circles[0].id}>
+            <Select defaultValue={circles[0]!.id}>
               <SelectTrigger className="w-full" aria-label="Filter by Circle">
                 <SelectValue />
               </SelectTrigger>
@@ -140,7 +140,7 @@ function AdminPage() {
                           <DropdownMenuItem onSelect={() => toast("Access suspended")}>
                             Suspend access
                           </DropdownMenuItem>
-                          <DropdownMenuItem variant="destructive" onSelect={() => toast("Member removed")}>
+                          <DropdownMenuItem className="text-destructive focus:text-destructive" onSelect={() => toast("Member removed")}>
                             Remove
                           </DropdownMenuItem>
                         </DropdownMenuContent>
