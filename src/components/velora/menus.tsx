@@ -98,7 +98,7 @@ export function NotificationsMenu() {
   );
 }
 
-export function UserMenu({ compact = false }: { compact?: boolean }) {
+export function UserMenu({ compact = false }: { compact?: boolean | undefined }) {
   const { theme, toggle } = useTheme();
 
   return (

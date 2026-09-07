@@ -193,7 +193,7 @@ export function ScheduleMeetingModal({ trigger }: { trigger: ReactNode }) {
               </div>
               <div className="space-y-2">
                 <Label htmlFor="meeting-circle">Circle / participants</Label>
-                <Select defaultValue={circles[0].id}>
+                <Select defaultValue={circles[0]!.id}>
                   <SelectTrigger id="meeting-circle" className="w-full">
                     <SelectValue />
                   </SelectTrigger>

@@ -30,7 +30,7 @@ export const Route = createFileRoute("/messages")({
 });
 
 function MessagesPage() {
-  const [activeId, setActiveId] = useState(conversations[0].id);
+  const [activeId, setActiveId] = useState(conversations[0]!.id);
   const [tab, setTab] = useState("all");
   const [query, setQuery] = useState("");
   const [mobileOpen, setMobileOpen] = useState(false);

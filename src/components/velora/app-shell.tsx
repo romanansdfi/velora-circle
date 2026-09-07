@@ -60,15 +60,15 @@ function NavLink({
   to: string;
   label: string;
   icon: typeof Home;
-  collapsed?: boolean;
-  onNavigate?: () => void;
+  collapsed?: boolean | undefined;
+  onNavigate?: (() => void) | undefined;
 }) {
   const pathname = useRouterState({ select: (s) => s.location.pathname });
   const active = pathname === to || (to !== "/home" && pathname.startsWith(to));
 
   return (
     <Link
-      to={to}
+      to={to as "/home"}
       onClick={onNavigate}
       aria-label={label}
       aria-current={active ? "page" : undefined}
@@ -97,8 +97,8 @@ function SidebarBody({
   collapsed,
   onNavigate,
 }: {
-  collapsed?: boolean;
-  onNavigate?: () => void;
+  collapsed?: boolean | undefined;
+  onNavigate?: (() => void) | undefined;
 }) {
   return (
     <div className="flex h-full min-h-0 flex-col">
@@ -303,7 +303,7 @@ function MobileNavItem({
   const active = pathname === to || (to !== "/home" && pathname.startsWith(to));
   return (
     <Link
-      to={to}
+      to={to as "/home"}
       aria-label={label}
       aria-current={active ? "page" : undefined}
       className={cn(
