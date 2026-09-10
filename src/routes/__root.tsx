@@ -88,7 +88,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         content:
           "Velora Circle is a privacy-first collaboration platform for private messaging, Circles, and secure meetings.",
       },
-      { name: "theme-color", content: "#15130f" },
+      { name: "theme-color", content: "#1c1c1c" },
       { name: "apple-mobile-web-app-capable", content: "yes" },
       { property: "og:site_name", content: "Velora Circle" },
       { property: "og:type", content: "website" },

@@ -6,7 +6,7 @@
 
 /*
  * VELORA CIRCLE design system.
- * Dark (black and restrained gold) is the primary experience; `.light` on <html> flips tokens.
+ * Dark (premium black & white monochrome) is the primary experience; `.light` on <html> flips tokens.
  * All colors use oklch. Never hardcode colors in components.
  */
 
@@ -65,43 +65,44 @@
 :root {
   --radius: 0.9rem;
 
-  --background: oklch(0.125 0.008 78);
-  --foreground: oklch(0.94 0.014 85);
-  --surface: oklch(0.17 0.011 75);
-  --surface-2: oklch(0.215 0.014 75);
-  --card: oklch(0.17 0.011 75);
-  --card-foreground: oklch(0.94 0.014 85);
-  --popover: oklch(0.185 0.013 75);
-  --popover-foreground: oklch(0.94 0.014 85);
-  --primary: oklch(0.76 0.125 82);
-  --primary-foreground: oklch(0.14 0.012 72);
-  --secondary: oklch(0.225 0.018 72);
-  --secondary-foreground: oklch(0.91 0.018 84);
-  --muted: oklch(0.205 0.012 72);
-  --muted-foreground: oklch(0.69 0.02 80);
-  --accent: oklch(0.255 0.027 76);
-  --accent-foreground: oklch(0.95 0.018 86);
-  --destructive: oklch(0.585 0.15 22);
-  --destructive-foreground: oklch(0.985 0.004 250);
-  --success: oklch(0.63 0.11 158);
-  --success-foreground: oklch(0.14 0.012 72);
-  --violet: oklch(0.69 0.09 55);
-  --cyan: oklch(0.68 0.075 180);
-  --border: oklch(0.76 0.125 82 / 13%);
-  --border-strong: oklch(0.76 0.125 82 / 24%);
-  --input: oklch(0.76 0.125 82 / 16%);
-  --ring: oklch(0.76 0.125 82);
+  /* Premium black & white monochrome — achromatic across the board */
+  --background: oklch(0.11 0 0);
+  --foreground: oklch(0.95 0 0);
+  --surface: oklch(0.155 0 0);
+  --surface-2: oklch(0.2 0 0);
+  --card: oklch(0.155 0 0);
+  --card-foreground: oklch(0.95 0 0);
+  --popover: oklch(0.175 0 0);
+  --popover-foreground: oklch(0.95 0 0);
+  --primary: oklch(0.93 0 0);
+  --primary-foreground: oklch(0.12 0 0);
+  --secondary: oklch(0.21 0 0);
+  --secondary-foreground: oklch(0.92 0 0);
+  --muted: oklch(0.19 0 0);
+  --muted-foreground: oklch(0.66 0 0);
+  --accent: oklch(0.245 0 0);
+  --accent-foreground: oklch(0.96 0 0);
+  --destructive: oklch(0.6 0.17 22);
+  --destructive-foreground: oklch(0.985 0 0);
+  --success: oklch(0.65 0.12 158);
+  --success-foreground: oklch(0.12 0 0);
+  --violet: oklch(0.7 0 0);
+  --cyan: oklch(0.7 0 0);
+  --border: oklch(1 0 0 / 10%);
+  --border-strong: oklch(1 0 0 / 20%);
+  --input: oklch(1 0 0 / 14%);
+  --ring: oklch(0.93 0 0);
 
-  --sidebar: oklch(0.105 0.007 74);
-  --sidebar-foreground: oklch(0.91 0.018 84);
-  --sidebar-primary: oklch(0.76 0.125 82);
-  --sidebar-primary-foreground: oklch(0.14 0.012 72);
-  --sidebar-accent: oklch(0.205 0.018 72);
-  --sidebar-accent-foreground: oklch(0.95 0.018 86);
-  --sidebar-border: oklch(0.76 0.125 82 / 12%);
-  --sidebar-ring: oklch(0.76 0.125 82);
+  --sidebar: oklch(0.085 0 0);
+  --sidebar-foreground: oklch(0.9 0 0);
+  --sidebar-primary: oklch(0.93 0 0);
+  --sidebar-primary-foreground: oklch(0.12 0 0);
+  --sidebar-accent: oklch(0.19 0 0);
+  --sidebar-accent-foreground: oklch(0.96 0 0);
+  --sidebar-border: oklch(1 0 0 / 9%);
+  --sidebar-ring: oklch(0.93 0 0);
 
-  --gradient-brand: linear-gradient(135deg, var(--primary), var(--violet) 135%);
+  --gradient-brand: linear-gradient(135deg, oklch(0.97 0 0), oklch(0.78 0 0) 135%);
   --gradient-surface: linear-gradient(
     160deg,
     oklch(1 0 0 / 0.06),
@@ -110,17 +111,17 @@
   );
   --gradient-mesh: radial-gradient(
       55% 55% at 12% 8%,
-      color-mix(in oklab, var(--primary) 26%, transparent),
+      color-mix(in oklab, oklch(0.85 0 0) 22%, transparent),
       transparent 70%
     ),
     radial-gradient(
       45% 45% at 92% 18%,
-      color-mix(in oklab, var(--violet) 18%, transparent),
+      color-mix(in oklab, oklch(1 0 0) 12%, transparent),
       transparent 70%
     ),
     radial-gradient(
       60% 60% at 70% 100%,
-      color-mix(in oklab, var(--cyan) 12%, transparent),
+      color-mix(in oklab, oklch(0.7 0 0) 10%, transparent),
       transparent 70%
     );
 }
