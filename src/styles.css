@@ -6,7 +6,7 @@
 
 /*
  * VELORA CIRCLE design system.
- * Dark (deep navy) is the primary experience; `.light` on <html> flips tokens.
+ * Dark (black and restrained gold) is the primary experience; `.light` on <html> flips tokens.
  * All colors use oklch. Never hardcode colors in components.
  */
 
@@ -65,43 +65,43 @@
 :root {
   --radius: 0.9rem;
 
-  --background: oklch(0.18 0.026 259);
-  --foreground: oklch(0.965 0.005 250);
-  --surface: oklch(0.223 0.028 259);
-  --surface-2: oklch(0.262 0.03 259);
-  --card: oklch(0.223 0.028 259);
-  --card-foreground: oklch(0.965 0.005 250);
-  --popover: oklch(0.235 0.03 259);
-  --popover-foreground: oklch(0.965 0.005 250);
-  --primary: oklch(0.635 0.176 258);
-  --primary-foreground: oklch(0.985 0.004 250);
-  --secondary: oklch(0.28 0.03 259);
-  --secondary-foreground: oklch(0.93 0.008 250);
-  --muted: oklch(0.27 0.028 259);
-  --muted-foreground: oklch(0.685 0.024 256);
-  --accent: oklch(0.3 0.036 259);
-  --accent-foreground: oklch(0.965 0.005 250);
+  --background: oklch(0.125 0.008 78);
+  --foreground: oklch(0.94 0.014 85);
+  --surface: oklch(0.17 0.011 75);
+  --surface-2: oklch(0.215 0.014 75);
+  --card: oklch(0.17 0.011 75);
+  --card-foreground: oklch(0.94 0.014 85);
+  --popover: oklch(0.185 0.013 75);
+  --popover-foreground: oklch(0.94 0.014 85);
+  --primary: oklch(0.76 0.125 82);
+  --primary-foreground: oklch(0.14 0.012 72);
+  --secondary: oklch(0.225 0.018 72);
+  --secondary-foreground: oklch(0.91 0.018 84);
+  --muted: oklch(0.205 0.012 72);
+  --muted-foreground: oklch(0.69 0.02 80);
+  --accent: oklch(0.255 0.027 76);
+  --accent-foreground: oklch(0.95 0.018 86);
   --destructive: oklch(0.585 0.15 22);
   --destructive-foreground: oklch(0.985 0.004 250);
   --success: oklch(0.63 0.11 158);
-  --success-foreground: oklch(0.16 0.02 259);
-  --violet: oklch(0.63 0.16 295);
-  --cyan: oklch(0.72 0.11 210);
-  --border: oklch(1 0 0 / 8%);
-  --border-strong: oklch(1 0 0 / 14%);
-  --input: oklch(1 0 0 / 12%);
-  --ring: oklch(0.635 0.176 258);
+  --success-foreground: oklch(0.14 0.012 72);
+  --violet: oklch(0.69 0.09 55);
+  --cyan: oklch(0.68 0.075 180);
+  --border: oklch(0.76 0.125 82 / 13%);
+  --border-strong: oklch(0.76 0.125 82 / 24%);
+  --input: oklch(0.76 0.125 82 / 16%);
+  --ring: oklch(0.76 0.125 82);
 
-  --sidebar: oklch(0.163 0.024 259);
-  --sidebar-foreground: oklch(0.93 0.008 250);
-  --sidebar-primary: oklch(0.635 0.176 258);
-  --sidebar-primary-foreground: oklch(0.985 0.004 250);
-  --sidebar-accent: oklch(0.26 0.03 259);
-  --sidebar-accent-foreground: oklch(0.965 0.005 250);
-  --sidebar-border: oklch(1 0 0 / 8%);
-  --sidebar-ring: oklch(0.635 0.176 258);
+  --sidebar: oklch(0.105 0.007 74);
+  --sidebar-foreground: oklch(0.91 0.018 84);
+  --sidebar-primary: oklch(0.76 0.125 82);
+  --sidebar-primary-foreground: oklch(0.14 0.012 72);
+  --sidebar-accent: oklch(0.205 0.018 72);
+  --sidebar-accent-foreground: oklch(0.95 0.018 86);
+  --sidebar-border: oklch(0.76 0.125 82 / 12%);
+  --sidebar-ring: oklch(0.76 0.125 82);
 
-  --gradient-brand: linear-gradient(135deg, var(--primary), var(--violet) 120%);
+  --gradient-brand: linear-gradient(135deg, var(--primary), var(--violet) 135%);
   --gradient-surface: linear-gradient(
     160deg,
     oklch(1 0 0 / 0.06),
